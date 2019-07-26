@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Spring Security Example </title>
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container">
+
+    <div class="page">
+        <div class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target=".navbar-ex1-collapse">
+                    <span class="sr-only" th:text="#{label.navigation.toggle.navigation.button}">Toggle navigation</span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand">Spring Social Example</span>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <form th:action="@{/oauth2/authorize/google}" method="POST">
+                    <fieldset>
+                        <h1>Please Sign In</h1>
+
+                        <div th:if="${param.error}">
+                            <div class="alert alert-danger">
+                                로그인 실패하였습니다.
+                            </div>
+                        </div>
+
+                        <div th:if="${param.logout}">
+                            <div class="alert alert-info">
+                                로그아웃 되었습니다.
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <input type="hidden" name="redirect_uri" value="http://localhost:8080/oauth2/redirect"/>
+                                <input type="submit" value="Login using Google"/>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6"></div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </div>
+
+</div>
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
