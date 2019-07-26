@@ -39,6 +39,10 @@ app:
 
 logging:
   level:
+    kr:
+      co:
+        tabling:
+          works: debug
     org:
       springframework:
         web: debug

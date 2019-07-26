@@ -65,6 +65,7 @@ public class WebConfiguration {
                         .and()
                         .authorizeRequests()
                             .antMatchers("/",
+                                    "/api/hello",
                                     "/assets/**",
                                     "/css/**",
                                     "/js/**",
