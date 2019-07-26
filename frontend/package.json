@@ -5,7 +5,9 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "0.9.x"
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "0.9.x",
+    "react-s-alert": "^1.4.1"
   },
   "devDependencies": {},
   "scripts": {
