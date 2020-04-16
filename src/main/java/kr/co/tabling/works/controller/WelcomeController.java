@@ -20,4 +20,8 @@ public class WelcomeController {
         return message;
     }
 
+    @GetMapping("/api/goodbye")
+    public String goodbye() {
+        return "goodbye";
+    }
 }
