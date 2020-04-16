@@ -1,12 +1,10 @@
 package kr.co.tabling.works.controller;
 
+import kr.co.tabling.works.service.MessagesService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -15,6 +13,9 @@ import java.util.Date;
 public class WelcomeController {
 
     Logger logger = LoggerFactory.getLogger(getClass());
+
+    @Autowired
+    private MessagesService service;
 
     @GetMapping("/api/hello")
     public String hello() {
@@ -37,4 +38,10 @@ public class WelcomeController {
     public String delete(@PathVariable Integer id) {
         return "deleted";
     }
+
+    @PutMapping("/messages/{id}")
+    public String put(@PathVariable Integer id) {
+        return Integer.toString(id);
+    }
+
 }
