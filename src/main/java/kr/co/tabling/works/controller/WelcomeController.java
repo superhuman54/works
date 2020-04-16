@@ -35,7 +35,7 @@ public class WelcomeController {
     }
 
     @DeleteMapping("/messages/{id}")
-    public String delete(@PathVariable Integer id) {
+    public String delete(@PathVariable Integer id, String body) {
         return "deleted";
     }
 
