@@ -23,7 +23,7 @@ public class WelcomeController {
 
     @GetMapping("/api/goodbye")
     public String goodbye() {
-        return "goodbye";
+        return "goodbye baby";
     }
 
     @PostMapping("/")
